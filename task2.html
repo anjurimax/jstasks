@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Task-2</title>
+    <style>
+      #id {
+        margin-left: 15rem;
+        margin-right: 10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-decoration-line: underline">JAVA SCRIPT TASK-2</h1>
+    <form id="id">
+      <label>Enter the string:</label>
+      <input type="text" id="str" /> <br />
+      <input type="button" onClick="rever()" value="Sort" />
+    </form>
+    <p id="id">
+      The Result is: <br />
+      <span id="r"></span>
+    </p>
+
+    <script>
+      const rev = (a) => {
+        let initial = a.split("").sort().join("");
+        return initial;
+      };
+
+      function rever() {
+        const inp = document.getElementById("str").value;
+        let a = rev(inp);
+        document.getElementById("r").innerHTML = a;
+      }
+    </script>
+  </body>
+</html>

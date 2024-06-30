@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT TASK-5</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .error {
+        color: red;
+      }
+      input:invalid,
+      textarea:invalid {
+        border: 2px solid rgb(7, 2, 2);
+      }
+      input:invalid + .error,
+      textarea:invalid + .error {
+        display: inline;
+      }
+      .error {
+        display: none;
+      }
+    </style>
+    <script>
+      function validateForm(event) {
+        const formElements = document.querySelectorAll("input, textarea");
+        formElements.forEach((element) => {
+          const errorElement = document.getElementById(element.name + "Error");
+          if (!element.checkValidity()) {
+            errorElement.style.display = "inline";
+          } else {
+            errorElement.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="validateForm(event)">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        style="margin-left: 18px"
+      />
+      <span id="nameError" class="error">This field is required</span
+      ><br /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        style="margin-left: 18px"
+      />
+      <span id="emailError" class="error"
+        >A valid email address is required</span
+      ><br /><br />
+
+      <label for="website">Website:</label>
+      <input
+        type="url"
+        id="website"
+        name="website"
+        required
+        style="margin-left: 4.95px"
+      />
+      <span id="websiteError" class="error">A valid URL is required</span
+      ><br /><br />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <span id="messageError" class="error">This field is required</span
+      ><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

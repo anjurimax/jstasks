@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT TASK-1</title>
+    <style>
+      #id {
+        margin-top: 12rem;
+        margin-bottom: 20rem;
+        margin-left: 15rem;
+        margin-right: 10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-decoration-line: underline">JAVA SCRIPT TASK-1</h1>
+    <form id="id">
+      <label>Enter the number:</label>
+      <input type="text" id="num" /> <br />
+      <input type="button" onClick="rever()" value="reverse" />
+      <p>
+        The Result is : <br />
+        <span id="r"></span>
+      </p>
+    </form>
+
+    <script>
+      const rev = (a) => {
+        var inital = 0;
+        while (a > 0) {
+          rem = a % 10;
+          inital = inital * 10 + rem;
+          a = Math.floor(a / 10);
+        }
+        return inital;
+      };
+
+      function rever() {
+        var inp = document.getElementById("num").value;
+        a = rev(inp);
+        document.getElementById("r").innerHTML = a;
+      }
+    </script>
+  </body>
+</html>
